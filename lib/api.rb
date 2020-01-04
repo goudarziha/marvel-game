@@ -13,7 +13,7 @@ class MarvelAPI
   @@hash = '' 
 
   def initialize()
-    @@time = create_timestamp 
+    @@time = create_timestamp() 
     @@hash = create_md5_hash()
     @@full_url = @@base_url
   end

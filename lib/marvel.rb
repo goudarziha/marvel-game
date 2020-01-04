@@ -5,6 +5,8 @@ require "tty-prompt"
 
 api = MarvelAPI.new
 characters = api.get_characters
+name_list = []
+characters.each_with_index {|val, index| name_list << val.create_choice_arr(index)}
 
 def is_magic_word(word)
   return MAGIC_WORDS.include? word.downcase
@@ -45,8 +47,6 @@ has_winner = false
 
 while !has_winner
   prompt = TTY::Prompt.new
-  name_list = []
-  characters.each_with_index {|val, index| name_list << val.create_choice_arr(index)}
   char_choices = prompt.multi_select('Choose 2 Marvel Characters', name_list)
   seed_number = prompt.ask("Provide seed number in range: 0-9?") { |q| q.in('0-9') }
 
