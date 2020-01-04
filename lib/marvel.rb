@@ -1,4 +1,4 @@
-require_relative 'character'
+require_relative 'models/character'
 require_relative 'api'
 require_relative 'const'
 require "tty-prompt"
@@ -7,7 +7,7 @@ api = MarvelAPI.new
 characters = api.get_characters
 
 def is_magic_word(word)
-  return MAGIC_WORDS.include? word
+  return MAGIC_WORDS.include? word.downcase
 end
 
 def create_restart_message

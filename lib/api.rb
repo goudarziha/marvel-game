@@ -1,10 +1,8 @@
 require 'httparty'
 require 'digester'
 require 'json'
-require_relative 'character'
-require_relative 'const'
+require_relative 'models/character'
 
-require "tty-prompt"
 
 class MarvelAPI
   @@base_url = 'http://gateway.marvel.com/v1/public'
