@@ -16,5 +16,4 @@ class Character
 	def description
 		return @description
 	end
-
  end
