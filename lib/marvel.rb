@@ -77,6 +77,8 @@ while !has_winner
       create_win_message(char_2)
       has_winner = true
       break
+    elsif word1.length == word2.length
+      create_tie_message()
     end
   end
   create_restart_message()
